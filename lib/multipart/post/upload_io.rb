@@ -37,7 +37,7 @@ module Multipart
         filename ||= local_path
 
         @content_type = content_type
-        @original_filename = File.basename(filename)
+        @original_filename = opts[:original_filename] || File.basename(filename)
         @local_path = local_path
         @io = io
         @opts = opts
